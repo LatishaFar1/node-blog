@@ -7,13 +7,30 @@ const server = http.createServer((request, response) => {
 
     response.setHeader("Content-Type", "text/html");
 
-    fs.readFile("./views/index.html", (error, data) => {
+    //ROUTING
+    let path = "./views/";
+    switch(request.url){
+        case "/":
+            path += "index.html"
+            break;
+        case "/about":
+            path += "about.html";
+            break;
+        default:
+            path += "error.html";
+            break;
+    }
+
+
+    //READING 
+    fs.readFile(path, (error, data) => {
         if(error){
             console.log(error);
             response.end();
         } else {
-            response.write(data);
-            response.end();
+            // below line is not necessary if we pass data into response.end()
+            // response.write(data);
+            response.end(data);
         }
     })
 
