@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Welcome to my first node project.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LatishaFar1/node-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LatishaFar1/node-blog/issues"
+  },
+  "homepage": "https://github.com/LatishaFar1/node-blog#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
