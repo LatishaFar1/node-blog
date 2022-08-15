@@ -23,6 +23,6 @@ app.get('/about', (request, response) => {
 
 //REDIRECTS
 
-app.get('about-me', (request, response) => {
+app.get('/about-me', (request, response) => {
     response.redirect('/about');
 })
