@@ -3,7 +3,10 @@ const fs = require("fs");
 const _ = require('lodash');
 
 const server = http.createServer((request, response) => {
-    console.log(request.url, request.method);
+    
+    const greet = _.once(() => {
+        console.log('hi')
+    });
 
     response.setHeader("Content-Type", "text/html");
 
