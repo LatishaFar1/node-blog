@@ -2,14 +2,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
-        <title>Node Blog</title>
+        <title>Node Blog | <%=title%> </title>
         <link href="../index.css" rel="stylesheet"/>
     </head>
 
     <body>
+
+        <% const name = "tish" %>
+
         <div class="title">
             <h1>Home Page</h1>
             <p>welcome to the blog</p>
+            <p> <%= name %>  </p>
         </div>
       
         <nav>
@@ -19,6 +23,14 @@
 
         <div class="blog content">
             <h2>Posts</h2>
+
+            <% if (posts.length > 0 ) { %>
+                <% posts.forEach(post => { %>
+                    <h3 class="title"> <%= post.title %> </h3>
+                    <p class="summary"><%= post.summary %></p>
+                <% })%>
+
+            <% } %>
         </div>
     </body>
 
