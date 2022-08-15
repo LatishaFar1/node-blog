@@ -19,3 +19,10 @@ app.get('/about', (request, response) => {
     //if we want to return the file - we need to link to the directory name + file
     response.sendFile('/views/about.html', {root: __dirname})
 })
+
+
+//REDIRECTS
+
+app.get('about-me', (request, response) => {
+    response.redirect('/about');
+})
