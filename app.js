@@ -26,3 +26,9 @@ app.get('/about', (request, response) => {
 app.get('/about-me', (request, response) => {
     response.redirect('/about');
 })
+
+//ERROR PAGE
+//use() is used to create middleware
+app.use((request, response) => {
+    response.sendFile('/views/error.html', {root: __dirname})
+})
