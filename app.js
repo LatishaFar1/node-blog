@@ -28,14 +28,18 @@ app.get('/about', (request, response) => {
 })
 
 
-//REDIRECTS
+// //REDIRECTS
 
-app.get('/about-me', (request, response) => {
-    response.redirect('/about');
+// app.get('/about-me', (request, response) => {
+//     response.redirect('/about');
+// })
+
+app.get('/new', (request, response) => {
+    response.render('newpost');
 })
 
 //ERROR PAGE - needs to be at the bottom of the page
 //use() is used to create middleware
 app.use((request, response) => {
-    response.status(404).sendFile('/views/error.html', {root: __dirname})
+    response.status(404).render('error')
 })
