@@ -70,7 +70,7 @@ body{
   transition: all 0.3s ease; 
 }
 
-.post-title{
+.post-title, p{
     text-align: justify; 
     padding-left: 30px;
     padding-right: 30px;
@@ -80,9 +80,9 @@ body{
 }
 
 .summary{
-
+    color: black;
     padding: 30px 30px 20px 0;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 22px;
 }
 
@@ -124,4 +124,14 @@ body{
   button:hover{
     background-color: #F8DFDD;
     color: black;
+  }
+
+  /* FOOTER */
+  footer{
+    margin: 200px auto 20px;
+    text-align: center;
+    color: #ECC4C0;
+  }
+  footer > a{
+    color:  #ECC4C0;
   }
