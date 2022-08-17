@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+const morgan = require('morgan');
 
 //VIEW ENGINE
 app.set('view engine', 'ejs');
@@ -12,15 +13,12 @@ app.set('view engine', 'ejs');
 app.listen(3000);
 
 
-//CUSTOM MIDDLEWARE
+//MIDDLEWARE
+app.use(morgan('dev'));
 
-app.use((request, response, next) => {
-    console.log('new request was made');
-    console.log('host: ', request.hostname);
-    console.log('path: ', request.path);
-    console.log('method: ', request.method);
-    next();
-});
+//STATIC FILES
+app.use(express.static('static'))
+
 
 
 app.get('/', (request, response) => {
