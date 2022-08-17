@@ -11,6 +11,18 @@ app.set('view engine', 'ejs');
 
 app.listen(3000);
 
+
+//CUSTOM MIDDLEWARE
+
+app.use((request, response, next) => {
+    console.log('new request was made');
+    console.log('host: ', request.hostname);
+    console.log('path: ', request.path);
+    console.log('method: ', request.method);
+    next();
+});
+
+
 app.get('/', (request, response) => {
     // response.send('<p>Home page</p>');
     //send() automatically sets the content header and status code
