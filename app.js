@@ -105,7 +105,16 @@ app.get('/posts', (request, response) => {
 
 
 //GET ONE POST
-
+app.get('/posts/:id', (request, response) => {
+    //find single post with id
+        //extract id
+        const id = request.params.id;
+    Post.findById(id)
+        .then(result => {
+            render('post-details', {post: result, title: 'Post'})
+        })
+    
+})
 
 
 //POST REQUEST
