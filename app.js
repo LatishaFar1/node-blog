@@ -111,7 +111,7 @@ app.get('/posts/:id', (request, response) => {
         const id = request.params.id;
     Post.findById(id)
         .then(result => {
-            render('post-details', {post: result, title: 'Post'})
+            response.render('post-details', {post: result, title: 'Post'})
         })
     
 })
