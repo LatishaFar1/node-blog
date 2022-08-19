@@ -2,16 +2,19 @@ const express = require('express');
 
 const app = express();
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+const Post = require('./models/posts');
+
+
+//CONNECTING TO MONGODB
+const dbURL = 'mongodb+srv://Tish:Loki2022@node-blog.5cqmpje.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(dbURL)
+    .then((result) => app.listen(3000) )
+    .catch((error) => console.log(error));
 
 //VIEW ENGINE
 app.set('view engine', 'ejs');
 // app.set('views', 'folder-name-with-views')
-
-
-// listen for requests
-
-app.listen(3000);
-
 
 //MIDDLEWARE
 app.use(morgan('dev'));
@@ -19,6 +22,12 @@ app.use(morgan('dev'));
 //STATIC FILES
 app.use(express.static('static'))
 
+
+//MONGODB & MONGOOSE ROUTING
+
+app.get('/new', (request, response) => {
+
+})
 
 
 app.get('/', (request, response) => {
