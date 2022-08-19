@@ -7,7 +7,7 @@ const Post = require('./models/posts');
 
 
 //CONNECTING TO MONGODB
-const dbURL = 'mongodb+srv://Tish:Loki2022@node-blog.5cqmpje.mongodb.net/?retryWrites=true&w=majority';
+const dbURL = 'mongodb+srv://Tish:Loki2022@node-blog.5cqmpje.mongodb.net/node-blog?retryWrites=true&w=majority';
 mongoose.connect(dbURL)
     .then((result) => app.listen(3000) )
     .catch((error) => console.log(error));
@@ -27,7 +27,7 @@ app.use(express.static('static'))
 
 app.get('/new-post', (request, response) => {
     const post = new Post({
-        title: 'first post',
+        title: 'second post',
         summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at tellus at urna condimentum mattis. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Aliquet bibendum enim facilisis gravida neque convallis a cras semper'
     });
     //asynchronous saving
@@ -39,6 +39,17 @@ app.get('/new-post', (request, response) => {
         console.log(error)
     });
 });
+
+app.get('/all-posts', (request, response) => {
+    Post.find()
+    .then((result) => {
+        response.send(result);
+    })
+    .catch((error)=> {
+        console.log(error)
+    })
+})
+
 
 
 app.get('/', (request, response) => {
