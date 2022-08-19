@@ -90,6 +90,9 @@ app.get('/about', (request, response) => {
 //     response.redirect('/about');
 // })
 
+
+//GET REQUEST 
+
 app.get('/posts', (request, response) => {
     Post.find()
     .then((result) => {
@@ -99,6 +102,10 @@ app.get('/posts', (request, response) => {
         console.log(error)
     })
 })
+
+
+//GET ONE POST
+
 
 
 //POST REQUEST
@@ -114,6 +121,7 @@ app.post('/posts', (request, response) => {
 })
 
 
+//DELETE REQUEST
 
 app.get('/new', (request, response) => {
     response.render('newpost', { title: 'NEW POST'});

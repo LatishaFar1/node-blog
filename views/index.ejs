@@ -28,8 +28,10 @@
             <br/>
             <% if (posts.length > 0 ) { %>
                 <% posts.forEach(post => { %>
+                    <a class="single" href="/posts/<%= post._id %>" >
                     <h3 class="post-title"> <%= post.title %> </h3>
                     <p class="summary"><%= post.summary %></p>
+                    </a>
                 <% })%>
 
             <% } %>
