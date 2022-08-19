@@ -19,6 +19,9 @@ app.set('view engine', 'ejs');
 //MIDDLEWARE
 app.use(morgan('dev'));
 
+    //middleware for the post request - takes the url encoded data and makes an object
+app.use(express.urlencoded({extended: true}));
+
 //STATIC FILES
 app.use(express.static('static'))
 
@@ -96,6 +99,21 @@ app.get('/posts', (request, response) => {
         console.log(error)
     })
 })
+
+
+//POST REQUEST
+
+app.post('/posts', (request, response) => {
+    //create new instance of a post
+   const post = new Post(request.body)
+   
+   post.save()
+   .then((result) => {
+    response.redirect('/')
+   })
+})
+
+
 
 app.get('/new', (request, response) => {
     response.render('newpost', { title: 'NEW POST'});
