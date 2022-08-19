@@ -25,9 +25,20 @@ app.use(express.static('static'))
 
 //MONGODB & MONGOOSE ROUTING
 
-app.get('/new', (request, response) => {
-
-})
+app.get('/new-post', (request, response) => {
+    const post = new Post({
+        title: 'first post',
+        summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at tellus at urna condimentum mattis. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Aliquet bibendum enim facilisis gravida neque convallis a cras semper'
+    });
+    //asynchronous saving
+    post.save()
+    .then((result) => {
+        response.send(result)
+    })
+    .catch((error) => {
+        console.log(error)
+    });
+});
 
 
 app.get('/', (request, response) => {
