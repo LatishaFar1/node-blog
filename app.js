@@ -50,6 +50,16 @@ app.get('/all-posts', (request, response) => {
     })
 })
 
+// app.get('/single-post', (request, response) => {
+//     Post.findById('62fee9f75daf9f31348064b2')
+//     .then((result) => {
+//         response.send(result);
+//     })
+//     .catch((error)=> {
+//         console.log(error)
+//     })
+// })
+
 
 
 app.get('/', (request, response) => {
@@ -58,16 +68,9 @@ app.get('/', (request, response) => {
 
     // response.sendFile('/views/index.html', {root: __dirname})
     
-    const posts = [
-        {title: "TitleONE", summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at tellus at urna condimentum mattis. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Interdum velit laoreet id donec ultrices. "},
-        {title: "TitleTWO", summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at tellus at urna condimentum mattis. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Interdum velit laoreet id donec ultrices. "},
-        {title: "TitleTHREE", summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at tellus at urna condimentum mattis. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Interdum velit laoreet id donec ultrices. "},
-        {title: "TitleFOUR", summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at tellus at urna condimentum mattis. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Interdum velit laoreet id donec ultrices. "}
-    ]
+    response.redirect('/posts');
     
     response.render('index', { title: 'Home', posts});
-
-
 })
 
 app.get('/about', (request, response) => {
@@ -84,6 +87,15 @@ app.get('/about', (request, response) => {
 //     response.redirect('/about');
 // })
 
+app.get('/posts', (request, response) => {
+    Post.find()
+    .then((result) => {
+        response.render('index', {title: 'All Posts', posts: result})
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+})
 
 app.get('/new', (request, response) => {
     response.render('newpost', { title: 'NEW POST'});
