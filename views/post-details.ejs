@@ -1,11 +1,22 @@
 <html lang="eng">
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Node Blog | <%=title%> <% title %>  </title>
+        <link rel="stylesheet" href="/index.css">
+    </head>
 
 <body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/new">Submit a Post</a>
+      </nav>
     
-    <div class="post content">
-        <h2> <%= post.title %>   </h2>
-        <p> <%= post.body %></p>
+    <div class="post-content">
+        <h2 class="post-title"> <%= post.title %>   </h2>
+        <p class="summary"> <%= post.body %></p>
     </div>
 
 

@@ -126,6 +126,21 @@ body{
     color: black;
   }
 
+
+  /* POST DETAILS PAGE */
+  .post-content{
+   margin: 50px;
+   padding-top: 20px;
+    width: 80%;
+    height: 400px;
+    background: white;
+       border-radius: 4px;
+  
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; 
+  }
+
   /* FOOTER */
   footer{
     margin: 200px auto 20px;

@@ -10,6 +10,10 @@ const postsSchema = new schema({
     summary: {
         type: String,
         required: true
+    },
+    body: {
+        type: String,
+        required: true
     }
 }, {timestamps: true });
 
