@@ -34,15 +34,6 @@ body{
  /* HOME */
 
 
- /* .blog-content{
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- grid-template-rows: auto;
- grid-template-areas: "t t t" ". st st" ". t1 t1" "i i i" "t2 t2 .";
- max-width: 768px;
- margin: auto
- } */
-
 .title{
  grid-area: t;
  text-align: right;
@@ -70,6 +61,12 @@ body{
   transition: all 0.3s ease; 
 }
 
+.blog-content a{
+  display: block;
+  margin: 40px;
+  padding-left: 30px;
+}
+
 .post-title, p{
     text-align: justify; 
     padding-left: 30px;
@@ -77,6 +74,11 @@ body{
     font-size: 30px;
     color: #DD4045;
     line-height: 18px;
+}
+
+.blog-content a:hover h3{
+  color: black;
+  border-left: 5px solid #DD4045;
 }
 
 .summary{
@@ -130,7 +132,7 @@ body{
   /* POST DETAILS PAGE */
   .post-content{
    margin: 50px;
-   padding-top: 20px;
+   padding: 20px 20px 20px ;
     width: 80%;
     height: 400px;
     background: white;
