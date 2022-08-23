@@ -1,7 +1,7 @@
-<html lang="eng">
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+   
+      
         <title>Node Blog | <%=title%> <% title %>  </title>
         <link rel="stylesheet" href="/index.css">
     </head>
@@ -18,10 +18,28 @@
         <h2 class="post-title"> <%= post.title %>   </h2>
         <p class="summary"> <%= post.body %></p>
     </div>
+    <a class="delete-button" data-doc="<% post._id %> ">Delete Post</a>
 
 
 
     <%- include("./footer.ejs") %>
+
+    <script>
+        const eliminate = document.querySelector('a.delete-button');
+
+        eliminate.addEventListener('click', (event) => {
+            const endpoint = `/posts/<%= post._id %>`;
+
+            fetch(endpoint, {
+                method: 'DELETE',
+            })
+            .then(response => 
+                response.json())
+            .then(data => console.log(data))    
+            .catch(error => console.log(error));
+        })
+
+    </script>
 </body>
 
 

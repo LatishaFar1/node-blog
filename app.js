@@ -132,6 +132,18 @@ app.post('/posts', (request, response) => {
 
 //DELETE REQUEST
 
+app.delete('/posts/:id', (request, response) => {
+    const id = request.params.id;
+
+    Post.findByIdAndDelete(id)
+        .then(result => {
+            response.json({redirect: '/'})
+        })
+        .catch(error => {
+            console.log(error)
+        })
+});
+
 app.get('/new', (request, response) => {
     response.render('newpost', { title: 'NEW POST'});
 })
