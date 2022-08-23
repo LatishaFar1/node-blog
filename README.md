@@ -6,7 +6,7 @@ Through this app, you can:
 
 - view all posts, and a brief blurb on the home page
 - click on a post and be redirected to a full page of its contents
-- submit a post
+- create a post
 - delete a post
 
 

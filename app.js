@@ -137,12 +137,13 @@ app.delete('/posts/:id', (request, response) => {
 
     Post.findByIdAndDelete(id)
         .then(result => {
-            response.json({redirect: '/'})
+            response.json({redirect: '/posts'})
         })
         .catch(error => {
             console.log(error)
         })
-});
+})
+
 
 app.get('/new', (request, response) => {
     response.render('newpost', { title: 'NEW POST'});
