@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const Post = require('./models/posts');
+const blogRoutes = require('./routes/blogRoutes');
 
 
 //CONNECTING TO MONGODB
@@ -91,63 +91,10 @@ app.get('/about', (request, response) => {
 // })
 
 
-//GET REQUEST 
+//BLOG ROUTES
 
-app.get('/posts', (request, response) => {
-    Post.find()
-    .then((result) => {
-        response.render('index', {title: 'All Posts', posts: result})
-    })
-    .catch((error) => {
-        console.log(error)
-    })
-})
+app.use(blogRoutes)
 
-
-//GET ONE POST
-app.get('/posts/:id', (request, response) => {
-    //find single post with id
-        //extract id
-        const id = request.params.id;
-    Post.findById(id)
-        .then(result => {
-            response.render('post-details', {post: result, title: 'Post'})
-        })
-    
-})
-
-
-//POST REQUEST
-
-app.post('/posts', (request, response) => {
-    //create new instance of a post
-   const post = new Post(request.body)
-   
-   post.save()
-   .then((result) => {
-    response.redirect('/')
-   })
-})
-
-
-//DELETE REQUEST
-
-app.delete('/posts/:id', (request, response) => {
-    const id = request.params.id;
-
-    Post.findByIdAndDelete(id)
-        .then(result => {
-            response.json({redirect: '/posts'})
-        })
-        .catch(error => {
-            console.log(error)
-        })
-})
-
-
-app.get('/new', (request, response) => {
-    response.render('newpost', { title: 'NEW POST'});
-})
 
 //ERROR PAGE - needs to be at the bottom of the page
 //use() is used to create middleware
