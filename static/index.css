@@ -4,6 +4,21 @@
     font-family: 'Work Sans', sans-serif;
 }
 
+
+.nav{
+  font-size: 12px;
+}
+
+a{
+  text-decoration: none;
+  color: #DD4045;
+}
+
+a:hover{
+  color:#ECC4C0;
+  font-weight: 500;
+}
+
 h1, h2{
    
     color: #DD4045;
@@ -26,15 +41,11 @@ body{
     text-transform: uppercase;
     
  }
- a{
-    text-decoration: none;
-    color: #DD4045;
- }
 
  /* HOME */
 
 .posts-title{
-  font-size: 30px;
+  font-size: 80px;
   text-align: center;
 }
 

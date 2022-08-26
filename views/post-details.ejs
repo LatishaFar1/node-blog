@@ -8,11 +8,9 @@
 
 <body>
 
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/new">Submit a Post</a>
-      </nav>
+    <h2 class="posts-title"> <%= post.title %> </h2>
+
+    <%- include("./header.ejs") %>
     
     <div class="post-content">
         <h2 class="post-title"> <%= post.title %>   </h2>
