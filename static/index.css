@@ -33,6 +33,10 @@ body{
 
  /* HOME */
 
+.posts-title{
+  font-size: 30px;
+  text-align: center;
+}
 
 .title{
  grid-area: t;
@@ -51,14 +55,15 @@ body{
 }
 
 .blog-content{
-    width: 80%;
+    /* width: 80%; */
 	height: 400px;
-	background: white;
-     border-radius: 4px;
-
+	/* background: white; */
+  border-radius: 4px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; 
+  text-align: center;
+ 
 }
 
 .blog-content a{
