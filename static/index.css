@@ -145,17 +145,36 @@ body{
 
 
   /* POST DETAILS PAGE */
-  .post-content{
-   margin: 50px;
-   padding: 20px 20px 20px ;
-    width: 80%;
-    height: 400px;
-    background: white;
-    border-radius: 4px;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease; 
+  .detail-content {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: 26px auto 0;
+    max-width: 550px;
+    min-height: 300px;
+    padding: 24px;
     position: relative;
+    width: 80%;
+  }
+  .detail-content:before, .detail-content:after {
+    content: "";
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+  .detail-content:before {
+    background: #fafafa;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+  }
+  .detail-content:after {
+    background: #f6f6f6;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
   }
 
   .delete-button{
@@ -163,7 +182,7 @@ body{
     bottom: 0;
     right: 0;
     padding: 10px;
-    margin-bottom: 300px;
+    /* margin-bottom: 300px; */
     background: #DD4045;
     color: white;
     border-radius: 10px;

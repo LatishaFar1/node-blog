@@ -8,15 +8,16 @@
 
 <body>
 
-    <h2 class="posts-title"> <%= post.title %> </h2>
+    <!-- <h2 class="posts-title"> <%= post.title %> </h2> -->
 
     <%- include("./header.ejs") %>
     
-    <div class="post-content">
+    <div class="detail-content">
         <h2 class="post-title"> <%= post.title %>   </h2>
         <p class="summary"> <%= post.body %></p>
+        <a class="delete-button" data-doc="<% post._id %> ">Delete Post</a>
     </div>
-    <a class="delete-button" data-doc="<% post._id %> ">Delete Post</a>
+    <!-- <a class="delete-button" data-doc="<% post._id %> ">Delete Post</a> -->
 
 
 
