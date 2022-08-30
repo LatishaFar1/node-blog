@@ -16,3 +16,10 @@ Built with:
 - express
 - mongoose
 - ejs
+
+
+
+Currently deployed with Heroku
+https://tish-node-blog.herokuapp.com/posts 
+
+
