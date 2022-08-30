@@ -9,7 +9,7 @@ const blogRoutes = require('./routes/blogRoutes');
 //CONNECTING TO MONGODB
 const dbURL = 'mongodb+srv://Tish:Loki2022@node-blog.5cqmpje.mongodb.net/node-blog?retryWrites=true&w=majority';
 mongoose.connect(dbURL)
-    .then((result) => app.listen(3000) )
+    .then((result) => app.listen(process.env.PORT || 3000) )
     .catch((error) => console.log(error));
 
 //VIEW ENGINE
